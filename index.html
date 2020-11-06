@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PDF</title>
+    <link rel="stylesheet" href="./pdf_viewer.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #e9eef2;
+      }
+
+      .Aligner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .Aligner-item {
+        max-width: 100%;
+        align-self: center;
+      }
+      
+      #next, #prev {
+        cursor: pointer;
+      }
+
+      #topbar {
+        background-color: #212426;
+        padding: 10px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        color: #eeeeee;
+        width: 100%;
+      }
+
+      #content {
+        margin-top: 30px;
+      }
+
+      #the-canvas {
+        scale: 2.2;
+      }
+
+      .page {
+        border: 1px solid #ddd;
+        margin-bottom: 30px;
+        box-shadow: 0px 2px 3px rgba(0,0,0,0.20);
+        -webkit-box-shadow: 0px 2px 3px  rgba(0,0,0,0.20);
+        -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.20);
+      }
+    </style>
+</head>
+<body id="body">
+  <div class="Aligner" id="topbar">
+    <div class="Aligner-item">
+      <!-- <button class="btn btn-light mr-1" style="float:left" id="zoomout" title="Zoom Out">-</button> -->
+      <button class="btn btn-light mr-2" style="float:left" disabled id="prev" title="Previous">Previous</button>
+      <input type="number" class="form-control" style="width:70px!important;float: left;" min="1" value="1" id="paging">
+      <button class="btn btn-light ml-2" id="next" title="Next">Next</button>
+      <!-- <button class="btn btn-light" id="zoomin" title="Zoom In">+</button> -->
+    </div>
+  </div>
+  <div class="Aligner" id="content">
+    <div id="the-canvas" class="Aligner-item"></div>
+  </div>
+  <script src="./pdf.js"></script>
+  <script src="./pdf_viewer.js"></script>
+  <script src="pdfviewer.js"></script>
+  <script>
+    new PdfViewer({
+      pdfPath: "2.pdf"
+    })
+  </script>
+</body>
+</html>
