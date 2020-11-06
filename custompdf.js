@@ -1,4 +1,4 @@
-class PdfViewer {
+class CustomPdf {
   pageNumber = 1
   totalPage = 0
   pdfPath = null
